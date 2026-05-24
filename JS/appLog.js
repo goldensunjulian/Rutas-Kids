@@ -10,7 +10,7 @@ formularioLogin.addEventListener("submit", (e) => {
         modal.classList.add("show");
         setTimeout(() => {
             window.location.replace("index.html"); 
-        }, 50000);
+        }, 5000);
     } else {
         alert("Contraseña incorrecta.");
     }
