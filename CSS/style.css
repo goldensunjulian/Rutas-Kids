@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #4f51cf, #b8b9e4);
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
+#bodyR {
+  flex: 1;
+  padding: 2%;
+}
+
+#titulo {
+  grid-column: span 3;
+  text-align: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  transition: 1s;
+
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: 1s;
+  color: rgba(0, 255, 21, 0.733);
+  background-color: black;
+}
+
+.ERuta:hover,
+.Adelete:hover,
+.cerrar:hover {
+  color: red;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.footer-modal {
+  position: sticky;
+  top: -3%;
+  background: white;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.estudiante {
+  border: 2px solid #ccc;
+  padding: 15px;
+  margin-bottom: 5%;
+}
+
+#rutas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ruta {
+  border: 1px solid black;
+  text-align: center;
+  box-shadow: 0 0 10px 2px black;
+  background-image: url(../RecursosGraficos/FondoRuta.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.ruta button {
+  font-size: 100%;
+  margin-top: 5%;
+}
+
+.estudianteEnRuta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.asiento {
+  border: 2px solid black;
+  box-shadow: 0 0 5px 1px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  display: flex;
+  border-top: 3px solid white;
+  background-color: #0B2147;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  margin-top: auto;
+}
+
+#PrimerLado,
+#SegundoLado {
+  font-size: 120%;
+  width: 50%;
+  padding: 0 3%;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(184, 195, 239);
+}
+
+#acciones {
+  display: flex;
+}
+
+#acciones button {
+  font-size: 100%;
+  margin-left: 17%;
+  margin-right: -10%;
+  font-size: 150%;
+}
+
+#clima{
+  margin-left: 41%;
+}
+h1{
+  text-align: center;
+}
+
+/*Media tableta*/
+@media (max-width: 1024px) {
+
+  #titulo {
+    grid-column: span 3;
+  }
+
+  #rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .estudianteEnRuta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .acortar{
+    width: 95%;
+  }
+
+  footer {
+    display: flex;
+    border-top: 3px solid white;
+    background-color: #0B2147;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
+  }
+
+  #PrimerLado,
+  #SegundoLado {
+    font-size: 120%;
+    width: 50%;
+    padding: 0 3%;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: rgb(184, 195, 239);
+  }
+
+  #acciones {
+    display: flex;
+  }
+  #clima{
+    margin-left: 30%;
+  }
+  #acciones button {
+    font-size: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  h1{
+    text-align: center;
+  }
+}
+
+/*media celular*/
+@media (max-width: 480px) {
+
+  #titulo {
+    grid-column: span 2;
+  }
+
+  #rutas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .estudianteEnRuta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .acortar{
+    width: 95%;
+  }
+
+  footer {
+    display: flex;
+    border-top: 3px solid white;
+    background-color: #0B2147;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
+  }
+
+  #PrimerLado,
+  #SegundoLado {
+    font-size: 120%;
+    width: 50%;
+    padding: 0 3%;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: rgb(184, 195, 239);
+  }
+
+  #acciones {
+    display: flex;
+  }
+  #clima{
+    margin-left: 16%;
+  }
+  #acciones button {
+    font-size: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  h1{
+    text-align: center;
+  }
+}
+
+/* Media Reloj*/
+
+@media (max-width: 360px) {
+
+  #titulo {
+    grid-column: span 1;
+  }
+
+  #rutas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  .estudianteEnRuta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .acortar{
+    width: 95%;
+  }
+
+  footer {
+    display: flex;
+    border-top: 3px solid white;
+    background-color: #0B2147;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
+  }
+
+  #PrimerLado,
+  #SegundoLado {
+    font-size: 120%;
+    width: 50%;
+    padding: 0 3%;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: rgb(184, 195, 239);
+  }
+
+  #acciones {
+    display: flex;
+  }
+  #clima{
+    margin-left: 0%;
+  }
+  #acciones button {
+    font-size: 75%;
+  }
+  h1{
+    text-align: center;
+  }
+}

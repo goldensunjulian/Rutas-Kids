@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Rutas Kids</title>
+</head>
+
+<body>
+    <h1>Rutas Kids-Directivos</h1>
+
+    <div id="clima">
+        Cargando clima...
+    </div>
+    <div id="acciones">
+        <button id="AgregarRuta">Agregar Ruta</button>
+        <button id="AgregarEstudiantes">Agregar Estudiante</button>
+        <button id="VerEstudiantes">Ver Lista de Estudiantes</button>        
+        <button> Cerrar sesion</button>
+    </div>
+
+    <div id="bodyR">
+
+        <div id="modalRuta" class="modal">
+            <div class="modal-content">
+                <h2>Agregar/Editar Ruta</h2>
+                <form id="formRuta">
+                    <input type="text" id="nombreRuta" placeholder="Nombre de la Ruta" required>
+                    <input type="time" id="hora" required>
+                    <input type="text" id="conductor" placeholder="Conductor" required>
+                    <button type="submit">Guardar</button>
+                    <button type="button" class="cerrar">Cancelar</button>
+                </form>
+            </div>
+        </div>
+        <div id="modalEstudiante" class="modal">
+            <div class="modal-content">
+                <h2>Agregar/Editar Estudiante</h2>
+                <form id="formEstudiante">
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="grado" placeholder="Grado" required>
+                    <input type="text" id="direccion" placeholder="Dirección" required>
+                    <input type="text" id="acudiente" placeholder="Acudiente" required>
+                    <input type="number" id="telefono" placeholder="Teléfono" required>
+                    <button type="submit">Guardar</button>
+                    <button type="button" class="cerrar">Cancelar</button>
+                </form>
+            </div>
+        </div>
+        <div id="rutas">
+            <h1 id="titulo">Rutas Activas</h1>
+        </div>
+        <div id="listaEstudiantes" class="modal">
+            <div class="modal-content">
+                <div class="footer-modal">
+                    <button type="button" class="cerrar">Cerrar</button>
+                </div>
+                <h2>Estudiantes</h2>
+                <div id="contenedorEstudiantes"></div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="PrimerLado">
+            <p>Copyright © 2026 Rutas Kids. <br> Todos los derechos reservados.</p>
+            <h2>Pagina principal</h2>
+            <a href="#formulario">Pagina de la institucion</a>
+            <br><br>
+            <a href="#formulario">Mira las rutas como invitado</a>
+            <br><br>
+            <p>Copyright © 2026 Rutas Kids</p>
+        </div>
+        <div id="SegundoLado">
+            <h2>Creador de la pagina:</h2>
+            <a href="../PortafolioJulian/index.html" target="_blank">Julián Camilo Tristán Vargas Lagos</a>
+            <h2>Nuestras redes sociales</h2>
+            <a href="">Facebook</a><br><br>
+            <a href="" target="_blank">Instagram</a><br><br>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tristanlagos2025@gmail.com&su=Asunto+del+Mensaje"
+                target="_blank">Gmail</a><br><br>
+            <a href="" target="_blank">Tiktok</a><br><br>
+        </div>
+    </footer>
+    <script src="../JS/app.js"></script>
+</body>
+
+</html>
