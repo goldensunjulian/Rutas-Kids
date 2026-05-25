@@ -47,3 +47,44 @@ h2{
     padding-top: 5%;
     padding-bottom: 5%;
 }
+
+
+@media (max-width: 1024px) {
+    form {
+        width: 45%;
+        margin-left: 3%;
+    }
+    input {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 85%;
+        padding: 30px 15px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    input {
+        width: 95%;
+    }
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 360px) {
+    form {
+        width: 90%;
+        padding: 20px 10px;
+        margin: 0 0 0 0;
+    }
+    h1 {
+        font-size: 1.1rem;
+    }
+    button {
+        font-size: 100%;
+    }
+}
