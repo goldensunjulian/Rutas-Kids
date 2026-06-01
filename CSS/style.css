@@ -129,6 +129,17 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px; /* Recomendado para que el checkbox no quede muy pegado */
+}
+
+.asiento.ausente {
+  background-color: #ffcdd2;
+  border-color: #d32f2f;
+}
+
+.asiento.presente {
+  background-color: #c8e6c9;
+  border-color: #388e3c;
 }
 
 footer {

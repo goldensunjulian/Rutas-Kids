@@ -121,6 +121,7 @@ formEstudiante.addEventListener('submit', (e) => {
         estudiante.acudiente = acudiente.value;
         estudiante.telefono = telefono.value;
         editId = null;
+        asistencia = false;
     } else {
         const data = {
             id: Date.now(),
@@ -189,10 +190,18 @@ function renderRutas(infoRuta) {
                 .filter(e => e.rutaId === null)
                 .map(e => `<option value="${e.id}">${e.nombre}</option>`).join('')}</select>
                 <h2>Estudiantes</h2>    
-                <div class="estudianteEnRuta">
+                    <div class="estudianteEnRuta">
                         ${element.estudiantes.map(e => `   
-                            <div class="asiento">
+                            <div class="asiento ${e.asistencia ? 'presente' : 'ausente'}">
                                 <p>${e.nombre}</p>
+                                
+                                <label style="font-size: 14px;">
+                                    <input type="checkbox" 
+                                           onchange="marcarAsistencia(${e.id}, this.checked)" 
+                                           ${e.asistencia ? 'checked' : ''}>
+                                    Asistió
+                                </label>
+
                                 <button class="Adelete" onclick="quitarDeRuta(${element.id}, ${e.id})">Quitar</button>
                             </div>
                         `).join('')}
@@ -204,6 +213,32 @@ function renderRutas(infoRuta) {
     });
 }
 
+const estudianteEnRutasver = document.querySelectorAll('.estudianteEnRuta .asiento');
+
+function testearRuta(rutaId) {
+    const ruta = rutasGuardadas.find(r => r.id === rutaId);
+    if (ruta) {
+        console.log(`🚌 Estudiantes asignados a: ${ruta.nombreRuta}`);
+        console.table(ruta.estudiantes);
+    } else {
+        console.log("❌ La ruta no existe.");
+    }
+}
+
+function marcarAsistencia(estudianteId, asistio) {
+    const estudiante = estudiantesGuardados.find(e => e.id === estudianteId);
+    if (estudiante) {
+        estudiante.asistencia = asistio;
+    }
+    rutasGuardadas.forEach(ruta => {
+        const estEnRuta = ruta.estudiantes.find(e => e.id === estudianteId);
+        if (estEnRuta) {
+            estEnRuta.asistencia = asistio;
+        }
+    });
+    guardarDatos();
+    renderRutas(rutasGuardadas);
+}
 function editarEstudiante(id) {
     const estudiante = estudiantesGuardados.find(e => e.id === id);
     nombre.value = estudiante.nombre;
